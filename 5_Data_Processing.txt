@@ -1,0 +1,54 @@
+<14> train valid test 데이터 나누기
+    : ML - Train / Test
+    : DL - Train / Valid / Test
+
+<교차검증>
+    : test 데이터가 적을 때 해결방안
+    * K-Fold 교차검증
+        1) 데이터를 K개로 쪼개서 검증, 훈련 데이터로 나눠 K번 반복
+        2) K번의 성능의 평균을 구함 
+
+<대표적인 모델 성능 지표>
+            머신러닝 모델의 답
+               true    false
+실제 정답 true   a        b
+        false    c        d
+
+    1. Precision(정밀도): a/(a+c)
+    2. Recall(재현율): a/(a+b)
+    3. Accuracy: (a+d)/(a+b+c+d)
+    4. F1 Score: 2*(정밀도*재현율)/(정밀도+재현율)
+        : 정밀도와 재현율의 조화 평균
+
+<15> 데이터 전처리
+    1. 결측치 처리(Missing Value)
+        1) 평균값 넣기 
+        2) 최빈값 넣기 
+        3) 버리기
+        * 결측치 총 데이터 개수 확인: df.isnull().sum()
+        * 결측치 0으로 채워버리기: df.fillna(0)
+    2. 범주형 변수 처리
+        1) 원-핫 인코딩 - 범주형 변수를 0 or 1값을 가지는 새로운 feature로 바꾸는 것
+            ex) red: 0 1 0 , green: 1 0 0
+            * from sklearn.preprocessing import OneHotEncoder
+        2) 데이터 바인딩 - 연속형 데이터를 구간을 나눠 범주화
+    3. Feature scaling
+        : 모델 데이터 feature를 맞추는 것
+        : 데이터 값이 너무 크거나 작아서 변수에 영향을 제대로 미치지 못하는 경우 feature를 조절
+        1) Min-Max Normalization
+            : 최소-최대값을 이용하여 0과 1사이 범위로 데이터를 표준화시킴
+            * from sklearn.preprocessing import minmax_scale()
+        2) Standardization
+            : 표준화 확률변수를 구하는 방법 z-score
+
+
+<16> 최종 실습 - 타이타닉1
+    1) kaggle 사용법 및 특징
+    2) 데이터 확인(결측치 확인)
+<17> 최종 실습 - 타이타닉2
+    1) 데이터 시각화
+    2) 결측값 처리(Title)
+        -> 이름에서 성별요소 뽑아 Title 값 만든 후 결측값 평균으로 처리
+<18> 최종 실습 - 타이타닉3
+    1) 남은 결측값 처리(Age, Cabin, Fare, Embarked, Sex) 
+{{Colab 참고}}
