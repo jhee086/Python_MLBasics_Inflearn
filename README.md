@@ -5,4 +5,4 @@
 3. Decision_Tree&Random_Forest
 4. KNN
 5. Data_Processing
-6. Practice
+6. Practice(Kaggle-Titanic)
